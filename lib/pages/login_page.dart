@@ -1,20 +1,47 @@
-// ignore_for_file: prefer_const_constructors
+import 'dart:ui';
 
 import "package:flutter/material.dart";
-import 'package:flutter/painting.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Center(
-        child: Text(
-          "Login Page",
-          style: TextStyle(
-              fontSize: 30,
-              color: Colors.blueAccent,
-              fontWeight: FontWeight.bold),
-        ),
+      color: Colors.white,
+      child: Column(
+        children: [
+          Image.asset("assests/images/login.png"),
+          SizedBox(
+            height: 20.0,
+          ),
+          Text(
+            "Welcome",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+                hintText: "Enter Username", labelText: "Username"),
+          ),
+          TextFormField(
+            obscureText: true,
+            decoration: InputDecoration(
+                hintText: "Enter Password", labelText: "Password"),
+          ),
+          ElevatedButton(
+            child: Text("Login"),
+            style: ButtonStyle(
+                // foregroundColor: TextButton.styleFrom(),
+                ),
+            onPressed: () {
+              print("Hey Akshay");
+            },
+          )
+        ],
       ),
     );
   }
